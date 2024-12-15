@@ -109,6 +109,7 @@ function ColdPage() {
             <Modal
                 open={openModal}
                 onClose={() => setOpenModal(false)}
+                onClick={() => setOpenModal(false)}
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"
             >
