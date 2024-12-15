@@ -19,7 +19,7 @@ function ColdPage() {
         boxShadow: 24,
         p: 4,
     };
-    const openPicture = (pic) => {
+    const openPicture = (pic: any) => {
         setCurrentPic(pic)
         setOpenModal(true)
     }
