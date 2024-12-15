@@ -6,7 +6,7 @@ import passiflora from '../images/passiflora.jpg'
 import { useState } from "react"
 
 function ColdPage() {
-    const [currentPic, setCurrentPic] = useState(null)
+    const [currentPic, setCurrentPic] = useState(mix)
     const [openModal, setOpenModal] = useState(false);
     const style = {
         position: 'absolute',
