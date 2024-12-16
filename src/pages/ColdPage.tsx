@@ -1,4 +1,4 @@
-import { Box, Grid2 as Grid, IconButton, Modal, Typography } from "@mui/material"
+import { Box, Button, Grid2 as Grid, IconButton, Modal, Typography } from "@mui/material"
 
 import slash1 from '../images/slash1.webp'
 import berry from '../images/berry.png'
@@ -11,6 +11,10 @@ import icedcoffee from '../images/icedcoffee.png'
 import passiflora from '../images/passiflora.png'
 import { useState } from "react"
 import { ExitToApp } from "@mui/icons-material"
+import { LuCupSoda } from "react-icons/lu";
+
+
+
 import { useNavigate } from "react-router-dom"
 
 function ColdPage() {
@@ -24,6 +28,7 @@ function ColdPage() {
         left: '50%',
         transform: 'translate(-50%, -50%)',
         width: '60%',
+        maxWidth: '300px',
         bgcolor: 'background.paper',
         border: '2px solid #000',
         boxShadow: 24,
@@ -40,140 +45,188 @@ function ColdPage() {
                     <ExitToApp />
                 </IconButton>
             </Grid>
-            <Typography variant="h3" paddingBottom={2} textAlign={'center'} fontWeight={900} >
-                الأصناف المتاحة
+            <Typography variant="h3" paddingBottom={2} paddingTop={4} textAlign={'center'} fontWeight={900} borderTop={6}>
+                سلاش
             </Typography>
-            <Grid container size={12} flexDirection={'row-reverse'} justifyContent={'space-between'} borderTop={3} borderBottom={3} paddingY={1}>
-                <Grid size={7.5} component={Typography} sx={{ textAlign: 'right', fontSize: 22, fontWeight: 800 }}>
-                    الصنف
+            <Grid container size={12} flexDirection={'row-reverse'} justifyContent={'space-between'} alignItems={'center'} borderBottom={1} paddingY={1}>
+                <Grid size={4} component={Typography} sx={{ textAlign: 'right', fontSize: 22, fontWeight: 800 }}>
+                    الأسعار
                 </Grid>
-                <Grid size={1.5} component={Typography} sx={{ textAlign: 'center', fontSize: 22, fontWeight: 800 }}>
-                    S
-                </Grid>
-                <Grid size={1.5} component={Typography} sx={{ textAlign: 'center', fontSize: 22, fontWeight: 800 }}>
-                    M
-                </Grid>
-                <Grid size={1.5} component={Typography} sx={{ textAlign: 'center', fontSize: 22, fontWeight: 800 }}>
-                    L
+                <Grid size={8} container alignItems={'end'} justifyContent={'space-around'} flexDirection={'row-reverse'}>
+                    <Grid container flexDirection={'column'} borderRadius={1000}>
+                        <LuCupSoda fontSize={30} />
+                        <Typography sx={{ textAlign: 'center', fontSize: 18, fontWeight: 800 }}>
+                            2.5
+                        </Typography>
+
+                    </Grid>
+                    <Grid container flexDirection={'column'} borderRadius={1000}>
+                        <LuCupSoda fontSize={40} />
+                        <Typography sx={{ textAlign: 'center', fontSize: 18, fontWeight: 800 }}>
+                            4
+                        </Typography>
+
+                    </Grid>
+                    <Grid container flexDirection={'column'} borderRadius={1000}>
+                        <LuCupSoda fontSize={50} />
+                        <Typography sx={{ textAlign: 'center', fontSize: 18, fontWeight: 800 }}>
+                            6
+                        </Typography>
+                    </Grid>
                 </Grid>
             </Grid>
-            <Grid container size={12} flexDirection={'row-reverse'} justifyContent={'space-between'} paddingY={2}>
-                <Grid size={7.5} component={Typography} sx={{ textAlign: 'right', fontSize: 18, fontWeight: 700 }}>
-                    سلاش
-                </Grid>
-                <Grid size={1.5} component={Typography} sx={{ textAlign: 'center', fontSize: 18, fontWeight: 700 }}>
-                    2.5
-                </Grid>
-                <Grid size={1.5} component={Typography} sx={{ textAlign: 'center', fontSize: 18, fontWeight: 700 }}>
-                    4
-                </Grid>
-                <Grid size={1.5} component={Typography} sx={{ textAlign: 'center', fontSize: 18, fontWeight: 700 }}>
-                    6
-                </Grid>
-            </Grid>
-
-
-            <Grid container size={12} flexDirection={'row-reverse'} borderBottom={3}>
-                <Grid container flexDirection={'column'} alignItems={'center'} size={6} padding={2} onClick={() => openPicture(mastik)}>
+            <Grid container size={12} flexDirection={'row-reverse'} paddingBottom={3}>
+                <Grid container flexDirection={'column'} alignItems={'center'} size={6} padding={2} onClick={() => openPicture(mastik)} >
                     <img width={120} height={180} src={mastik} />
-                    <Typography variant="h6">
+                    <Typography variant="h5" fontWeight={900} >
                         علكة ماستيك
                     </Typography>
                 </Grid>
 
                 <Grid container flexDirection={'column'} alignItems={'center'} size={6} padding={2} onClick={() => openPicture(berry)}>
                     <img width={120} height={180} src={berry} />
-                    <Typography variant="h6">
+                    <Typography variant="h5" fontWeight={900}>
                         توت
                     </Typography>
                 </Grid>
 
                 <Grid container flexDirection={'column'} alignItems={'center'} size={6} padding={2} onClick={() => openPicture(mango)}>
                     <img width={120} height={180} src={mango} />
-                    <Typography variant="h6">
+                    <Typography variant="h5" fontWeight={900}>
                         مانجو
                     </Typography>
                 </Grid>
                 <Grid container flexDirection={'column'} alignItems={'center'} size={6} padding={2} onClick={() => openPicture(kiwi)}>
                     <img width={120} height={180} src={kiwi} />
-                    <Typography variant="h6">
+                    <Typography variant="h5" fontWeight={900}>
                         كيوي
                     </Typography>
                 </Grid>
 
                 <Grid container flexDirection={'column'} alignItems={'center'} size={6} padding={2} onClick={() => openPicture(watermelon)}>
                     <img width={110} height={180} src={watermelon} />
-                    <Typography variant="h6">
+                    <Typography variant="h5" fontWeight={900}>
                         بطيخ
                     </Typography>
                 </Grid>
             </Grid>
 
-            <Grid container size={12} flexDirection={'row-reverse'} justifyContent={'space-between'} paddingY={2}>
-                <Grid size={7.5} component={Typography} sx={{ textAlign: 'right', fontSize: 18, fontWeight: 700 }}>
-                    آيس كوفي
+            <Typography variant="h3" paddingBottom={2} paddingTop={4} textAlign={'center'} fontWeight={900} borderTop={6}>
+                آيس كوفي
+            </Typography>
+            <Grid container size={12} flexDirection={'row-reverse'} justifyContent={'space-between'} alignItems={'center'} borderBottom={1} paddingY={1}>
+                <Grid size={4} component={Typography} sx={{ textAlign: 'right', fontSize: 22, fontWeight: 800 }}>
+                    الأسعار
                 </Grid>
-                <Grid size={1.5} component={Typography} sx={{ textAlign: 'center', fontSize: 18, fontWeight: 700 }}>
-                    5
-                </Grid>
-                <Grid size={1.5} component={Typography} sx={{ textAlign: 'center', fontSize: 18, fontWeight: 700 }}>
-                    7
-                </Grid>
-                <Grid size={1.5} component={Typography} sx={{ textAlign: 'center', fontSize: 18, fontWeight: 700 }}>
-                    9
+                <Grid size={8} container alignItems={'end'} justifyContent={'space-around'} flexDirection={'row-reverse'}>
+                    <Grid container flexDirection={'column'} borderRadius={1000}>
+                        <LuCupSoda fontSize={30} />
+                        <Typography sx={{ textAlign: 'center', fontSize: 18, fontWeight: 800 }}>
+                            5
+                        </Typography>
+
+                    </Grid>
+                    <Grid container flexDirection={'column'} borderRadius={1000}>
+                        <LuCupSoda fontSize={40} />
+                        <Typography sx={{ textAlign: 'center', fontSize: 18, fontWeight: 800 }}>
+                            7
+                        </Typography>
+
+                    </Grid>
+                    <Grid container flexDirection={'column'} borderRadius={1000}>
+                        <LuCupSoda fontSize={50} />
+                        <Typography sx={{ textAlign: 'center', fontSize: 18, fontWeight: 800 }}>
+                            9
+                        </Typography>
+                    </Grid>
                 </Grid>
             </Grid>
-            <Grid container size={12} justifyContent={'center'} borderBottom={3}>
+
+            <Grid container size={12} justifyContent={'center'} paddingBottom={3}>
 
                 <Grid container flexDirection={'column'} alignItems={'center'} padding={2} onClick={() => openPicture(icedcoffee)}>
                     <img width={120} height={180} src={icedcoffee} />
-                    <Typography variant="h6">
+                    <Typography variant="h5" fontWeight={900}>
                         آيس كوفي
                     </Typography>
                 </Grid>
             </Grid>
 
-            <Grid container size={12} flexDirection={'row-reverse'} justifyContent={'space-between'} paddingY={2}>
-                <Grid size={7.5} component={Typography} sx={{ textAlign: 'right', fontSize: 18 }}>
-                    بسفلورا
+            <Typography variant="h3" paddingBottom={2} paddingTop={4} textAlign={'center'} fontWeight={900} borderTop={6}>
+                بسفلورا
+            </Typography>
+            <Grid container size={12} flexDirection={'row-reverse'} justifyContent={'space-between'} alignItems={'center'} borderBottom={1} paddingY={1}>
+                <Grid size={4} component={Typography} sx={{ textAlign: 'right', fontSize: 22, fontWeight: 800 }}>
+                    الأسعار
                 </Grid>
-                <Grid size={1.5} component={Typography} sx={{ textAlign: 'center', fontSize: 18 }}>
-                    5
-                </Grid>
-                <Grid size={1.5} component={Typography} sx={{ textAlign: 'center', fontSize: 18 }}>
-                    7
-                </Grid>
-                <Grid size={1.5} component={Typography} sx={{ textAlign: 'center', fontSize: 18 }}>
-                    9
+                <Grid size={8} container alignItems={'end'} justifyContent={'space-around'} flexDirection={'row-reverse'}>
+                    <Grid container flexDirection={'column'} borderRadius={1000}>
+                        <LuCupSoda fontSize={30} />
+                        <Typography sx={{ textAlign: 'center', fontSize: 18, fontWeight: 800 }}>
+                            5
+                        </Typography>
+
+                    </Grid>
+                    <Grid container flexDirection={'column'} borderRadius={1000}>
+                        <LuCupSoda fontSize={40} />
+                        <Typography sx={{ textAlign: 'center', fontSize: 18, fontWeight: 800 }}>
+                            7
+                        </Typography>
+
+                    </Grid>
+                    <Grid container flexDirection={'column'} borderRadius={1000}>
+                        <LuCupSoda fontSize={50} />
+                        <Typography sx={{ textAlign: 'center', fontSize: 18, fontWeight: 800 }}>
+                            9
+                        </Typography>
+                    </Grid>
                 </Grid>
             </Grid>
-            <Grid container size={12} justifyContent={'center'} borderBottom={3}>
+
+            <Grid container size={12} justifyContent={'center'} paddingBottom={3}>
                 <Grid container flexDirection={'column'} alignItems={'center'} padding={2} onClick={() => openPicture(passiflora)}>
                     <img width={180} height={180} src={passiflora} />
-                    <Typography variant="h6">
+                    <Typography variant="h5" fontWeight={900}>
                         بسفلورا
                     </Typography>
                 </Grid>
             </Grid>
 
-            <Grid container size={12} flexDirection={'row-reverse'} justifyContent={'space-between'} paddingY={2}>
-                <Grid size={7.5} component={Typography} sx={{ textAlign: 'right', fontSize: 18 }}>
-                    عصائر طبيعية
+            <Typography variant="h3" paddingBottom={2} paddingTop={4} textAlign={'center'} fontWeight={900} borderTop={6}>
+                عصائر طبيعية
+            </Typography>
+            <Grid container size={12} flexDirection={'row-reverse'} justifyContent={'space-between'} alignItems={'center'} borderBottom={1} paddingY={1}>
+                <Grid size={4} component={Typography} sx={{ textAlign: 'right', fontSize: 22, fontWeight: 800 }}>
+                    الأسعار
                 </Grid>
-                <Grid size={1.5} component={Typography} sx={{ textAlign: 'center', fontSize: 18 }}>
-                    5
-                </Grid>
-                <Grid size={1.5} component={Typography} sx={{ textAlign: 'center', fontSize: 18 }}>
-                    7
-                </Grid>
-                <Grid size={1.5} component={Typography} sx={{ textAlign: 'center', fontSize: 18 }}>
-                    9
+                <Grid size={8} container alignItems={'end'} justifyContent={'space-around'} flexDirection={'row-reverse'}>
+                    <Grid container flexDirection={'column'} borderRadius={1000}>
+                        <LuCupSoda fontSize={30} />
+                        <Typography sx={{ textAlign: 'center', fontSize: 18, fontWeight: 800 }}>
+                            5
+                        </Typography>
+
+                    </Grid>
+                    <Grid container flexDirection={'column'} borderRadius={1000}>
+                        <LuCupSoda fontSize={40} />
+                        <Typography sx={{ textAlign: 'center', fontSize: 18, fontWeight: 800 }}>
+                            7
+                        </Typography>
+
+                    </Grid>
+                    <Grid container flexDirection={'column'} borderRadius={1000}>
+                        <LuCupSoda fontSize={50} />
+                        <Typography sx={{ textAlign: 'center', fontSize: 18, fontWeight: 800 }}>
+                            9
+                        </Typography>
+                    </Grid>
                 </Grid>
             </Grid>
-            <Grid container size={12} justifyContent={'center'} borderBottom={3}>
+
+            <Grid container size={12} justifyContent={'center'} paddingBottom={3}>
                 <Grid container flexDirection={'column'} alignItems={'center'} padding={2} onClick={() => openPicture(lemonmint)}>
                     <img width={180} height={180} src={lemonmint} />
-                    <Typography variant="h6">
+                    <Typography variant="h5" fontWeight={900}>
                         ليمون ونعنع
                     </Typography>
                 </Grid>
