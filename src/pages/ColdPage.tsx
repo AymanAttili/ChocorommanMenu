@@ -86,9 +86,9 @@ function ColdPage() {
                 </Grid>
             </Grid>
             <Grid container size={12} flexDirection={'row-reverse'} paddingBottom={3}>
-                <Typography fontSize={14} fontWeight={700} paddingY={1}>
-                    :الأصناف المتوفرة لليوم ({arabicDate})
-                </Typography>
+                <Grid size={12} textAlign={'right'} component={Typography} fontSize={14} fontWeight={700} paddingY={1} bgcolor={'secondary.main'}>
+                    .الأصناف المتوفرة لليوم ({arabicDate})
+                </Grid>
                 <Grid container flexDirection={'column'} alignItems={'center'} size={6} padding={2} onClick={() => openPicture(mastik)} >
                     <img width={120} height={180} src={mastik} />
                     <Typography variant="h5" fontWeight={900} >
@@ -237,7 +237,7 @@ function ColdPage() {
             </Grid>
 
             <Grid container size={12} justifyContent={'center'} paddingBottom={3}>
-                <Grid size={12} textAlign={'right'} component={Typography} fontSize={14} fontWeight={700} paddingY={1}>
+                <Grid size={12} textAlign={'right'} component={Typography} fontSize={14} fontWeight={700} paddingY={1} bgcolor={'secondary.main'}>
                     .الأصناف المتوفرة لليوم ({arabicDate})
                 </Grid>
 
