@@ -1,4 +1,4 @@
-import { Box, Grid2 as Grid, IconButton, Modal, Typography } from "@mui/material"
+import { Box, FormHelperText, Grid2 as Grid, IconButton, Modal, Typography } from "@mui/material"
 
 import slash1 from '../images/slash1.webp'
 import berry from '../images/berry.png'
@@ -19,6 +19,16 @@ import { useNavigate } from "react-router-dom"
 
 function ColdPage() {
     const navigate = useNavigate();
+
+    const currentDate = new Date();
+
+    // Format the date in Arabic
+    const arabicDate = new Intl.DateTimeFormat('ar-EG', {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+    }).format(currentDate);
 
     const [currentPic, setCurrentPic] = useState(slash1)
     const [openModal, setOpenModal] = useState(false);
@@ -76,6 +86,9 @@ function ColdPage() {
                 </Grid>
             </Grid>
             <Grid container size={12} flexDirection={'row-reverse'} paddingBottom={3}>
+                <FormHelperText>
+                    .الأصناف المتوفرة لليوم ({arabicDate})
+                </FormHelperText>
                 <Grid container flexDirection={'column'} alignItems={'center'} size={6} padding={2} onClick={() => openPicture(mastik)} >
                     <img width={120} height={180} src={mastik} />
                     <Typography variant="h5" fontWeight={900} >
@@ -224,10 +237,13 @@ function ColdPage() {
             </Grid>
 
             <Grid container size={12} justifyContent={'center'} paddingBottom={3}>
+                <Grid size={12} textAlign={'right'} component={FormHelperText}>
+                    .الأصناف المتوفرة لليوم ({arabicDate})
+                </Grid>
                 <Grid container flexDirection={'column'} alignItems={'center'} padding={2} onClick={() => openPicture(lemonmint)}>
                     <img width={180} height={180} src={lemonmint} />
                     <Typography variant="h5" fontWeight={900}>
-                        ليمون ونعنع
+                        ليمون وجرجير
                     </Typography>
                 </Grid>
             </Grid>
