@@ -1,4 +1,4 @@
-import { Box, FormHelperText, Grid2 as Grid, IconButton, Modal, Typography } from "@mui/material"
+import { Box, Grid2 as Grid, IconButton, Modal, Typography } from "@mui/material"
 
 import slash1 from '../images/slash1.webp'
 import berry from '../images/berry.png'
