@@ -2,11 +2,13 @@ import { Box, Grid2 as Grid, IconButton, Modal, Typography } from "@mui/material
 
 import slash1 from '../images/slash1.webp'
 import berry from '../images/berry.png'
-import watermelon from '../images/watermelon.png'
+// import watermelon from '../images/watermelon.png'
 import mango from '../images/mango.png'
-import kiwi from '../images/kiwi.png'
-import mastik from '../images/mastik.png'
-import lemonmint from '../images/lemonmint.png'
+// import kiwi from '../images/kiwi.png'
+// import mastik from '../images/mastik.png'
+import purple from '../images/purple.png'
+// import lemonmint from '../images/lemonmint.png'
+import lemonade from '../images/lemonade.png'
 import icedcoffee from '../images/icedcoffee.png'
 import passiflora from '../images/passiflora.png'
 import { useState } from "react"
@@ -89,39 +91,39 @@ function ColdPage() {
                 <Grid size={12} textAlign={'right'} component={Typography} fontSize={14} fontWeight={700} paddingY={1} bgcolor={'secondary.main'}>
                     .الأصناف المتوفرة لليوم ({arabicDate})
                 </Grid>
-                <Grid container flexDirection={'column'} alignItems={'center'} size={6} padding={2} onClick={() => openPicture(mastik)} >
-                    <img width={120} height={180} src={mastik} />
+                <Grid container flexDirection={'column'} alignItems={'center'} size={6} padding={2} onClick={() => openPicture(purple)} >
+                    <img width={120} height={180} src={purple} />
                     <Typography variant="h5" fontWeight={900} >
-                        علكة ماستيك
+                        علكة + بلوبيري
                     </Typography>
                 </Grid>
 
                 <Grid container flexDirection={'column'} alignItems={'center'} size={6} padding={2} onClick={() => openPicture(berry)}>
                     <img width={120} height={180} src={berry} />
                     <Typography variant="h5" fontWeight={900}>
-                        توت
+                        توت مشكل + بطيخ
                     </Typography>
                 </Grid>
 
                 <Grid container flexDirection={'column'} alignItems={'center'} size={6} padding={2} onClick={() => openPicture(mango)}>
                     <img width={120} height={180} src={mango} />
                     <Typography variant="h5" fontWeight={900}>
-                        مانجو
+                        مانجو + خوخ
                     </Typography>
                 </Grid>
-                <Grid container flexDirection={'column'} alignItems={'center'} size={6} padding={2} onClick={() => openPicture(kiwi)}>
+                {/* <Grid container flexDirection={'column'} alignItems={'center'} size={6} padding={2} onClick={() => openPicture(kiwi)}>
                     <img width={120} height={180} src={kiwi} />
                     <Typography variant="h5" fontWeight={900}>
                         كيوي
                     </Typography>
-                </Grid>
+                </Grid> */}
 
-                <Grid container flexDirection={'column'} alignItems={'center'} size={6} padding={2} onClick={() => openPicture(watermelon)}>
+                {/* <Grid container flexDirection={'column'} alignItems={'center'} size={6} padding={2} onClick={() => openPicture(watermelon)}>
                     <img width={110} height={180} src={watermelon} />
                     <Typography variant="h5" fontWeight={900}>
                         بطيخ
                     </Typography>
-                </Grid>
+                </Grid> */}
             </Grid>
 
             <Typography variant="h3" paddingBottom={2} paddingTop={4} textAlign={'center'} fontWeight={900} borderTop={6}>
@@ -241,8 +243,8 @@ function ColdPage() {
                     .الأصناف المتوفرة لليوم ({arabicDate})
                 </Grid>
 
-                <Grid container flexDirection={'column'} alignItems={'center'} padding={2} onClick={() => openPicture(lemonmint)}>
-                    <img width={180} height={180} src={lemonmint} />
+                <Grid container flexDirection={'column'} alignItems={'center'} padding={2} onClick={() => openPicture(lemonade)}>
+                    <img width={120} height={180} src={lemonade} />
                     <Typography variant="h5" fontWeight={900}>
                         ليمون وجرجير
                     </Typography>
