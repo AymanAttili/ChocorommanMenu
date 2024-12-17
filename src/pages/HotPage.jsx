@@ -22,7 +22,7 @@ function HotPage() {
         boxShadow: 24,
         p: 4,
     };
-    const openPicture = useCallback((pic: any) => {
+    const openPicture = useCallback((pic) => {
         setCurrentPic(pic)
         setOpenModal(true)
     }, [setCurrentPic, setOpenModal])
