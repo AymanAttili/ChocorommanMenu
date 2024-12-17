@@ -37,7 +37,7 @@ export const hotDrinks = [
             },
             {
                 id: 3,
-                name: 'شاي أحمر',
+                name: 'شاي',
                 image: redTea,
                 isAvailable: 1,
                 prices: {
