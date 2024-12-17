@@ -23,9 +23,9 @@ function DrinkCard({ drink, openPicture }) {
                 {
                     drink.prices &&
                     <Grid container alignItems={'end'} justifyContent={'center'} spacing={0}>
-                        <CiCoffeeCup fontSize={30} />
+                        <CiCoffeeCup fontSize={30} color={drink.prices.m ? '' : "grey"} />
                         <Typography fontWeight={900} textAlign={'center'}>
-                            {drink.prices.m ? drink.prices.m : 'X'}
+                            {drink.prices.m && drink.prices.m}
                         </Typography>
                     </Grid>
                 }
