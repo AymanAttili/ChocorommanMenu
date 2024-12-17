@@ -29,19 +29,19 @@ function MainMenu() {
                     </Typography>
                     <EmojiFoodBeverageIcon fontSize={'large'} />
                 </Grid>
-                <Grid component={Button} container size={12} spacing={2} color={'secondary.main'} bgcolor={'primary.main'} padding={4} borderRadius={5} boxShadow={8} onClick={() => navigate('mojito')}>
+                <Grid component={Button} disabled container size={12} spacing={2} color={'secondary.main'} bgcolor={'primary.main'} padding={4} borderRadius={5} boxShadow={8} onClick={() => navigate('mojito')}>
                     <Typography fontWeight={700} fontSize={22}>
                         أصناف الموهيتو
                     </Typography>
                     <FaBottleDroplet fontSize={32} />
                 </Grid>
-                <Grid component={Button} container size={12} spacing={2} color={'primary.main'} bgcolor={'secondary.main'} padding={4} borderRadius={5} boxShadow={8} onClick={() => navigate('ramadan')}>
+                <Grid component={Button} disabled container size={12} spacing={2} color={'primary.main'} bgcolor={'secondary.main'} padding={4} borderRadius={5} boxShadow={8} onClick={() => navigate('ramadan')}>
                     <Typography fontWeight={700} fontSize={22}>
                         أصناف رمضانية
                     </Typography>
                     <Bedtime fontSize={'large'} />
                 </Grid>
-                <Grid component={Button} container size={12} spacing={2} color={'secondary.main'} bgcolor={'primary.main'} padding={4} borderRadius={5} boxShadow={8} onClick={() => navigate('dessert')}>
+                <Grid component={Button} disabled container size={12} spacing={2} color={'secondary.main'} bgcolor={'primary.main'} padding={4} borderRadius={5} boxShadow={8} onClick={() => navigate('dessert')}>
                     <Typography fontWeight={700} fontSize={22}>
                         الحلويات
                     </Typography>

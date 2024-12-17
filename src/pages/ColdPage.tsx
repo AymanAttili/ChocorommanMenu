@@ -1,38 +1,17 @@
 import { Box, Grid2 as Grid, IconButton, Modal, Typography } from "@mui/material"
 
-import slash1 from '../images/slash1.webp'
-import berry from '../images/berry.png'
-// import watermelon from '../images/watermelon.png'
-import mango from '../images/mango.png'
-// import kiwi from '../images/kiwi.png'
-// import mastik from '../images/mastik.png'
-import purple from '../images/purple.png'
-// import lemonmint from '../images/lemonmint.png'
-import lemonade from '../images/lemonade.png'
-import icedcoffee from '../images/icedcoffee.png'
-import passiflora from '../images/passiflora.png'
-import { useState } from "react"
+import { useCallback, useState } from "react"
 import { ExitToApp } from "@mui/icons-material"
-import { LuCupSoda } from "react-icons/lu";
-
 
 
 import { useNavigate } from "react-router-dom"
+import { coldDrinks } from "../data/coldDrinks";
+import ColdDrinkCategory from "../ui/ColdDrinkCategory";
 
 function ColdPage() {
     const navigate = useNavigate();
 
-    const currentDate = new Date();
-
-    // Format the date in Arabic
-    const arabicDate = new Intl.DateTimeFormat('ar-EG', {
-        weekday: 'long',
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
-    }).format(currentDate);
-
-    const [currentPic, setCurrentPic] = useState(slash1)
+    const [currentPic, setCurrentPic] = useState('')
     const [openModal, setOpenModal] = useState(false);
     const style = {
         position: 'absolute',
@@ -46,10 +25,10 @@ function ColdPage() {
         boxShadow: 24,
         p: 4,
     };
-    const openPicture = (pic: any) => {
+    const openPicture = useCallback((pic: any) => {
         setCurrentPic(pic)
         setOpenModal(true)
-    }
+    }, [setCurrentPic, setOpenModal])
     return (
         <Grid container flexDirection={'column'} padding={2} color="primary.main">
             <Grid container justifyContent={'end'}>
@@ -57,200 +36,7 @@ function ColdPage() {
                     <ExitToApp />
                 </IconButton>
             </Grid>
-            <Typography variant="h3" paddingBottom={2} paddingTop={4} textAlign={'center'} fontWeight={900} borderTop={6}>
-                سلاش
-            </Typography>
-            <Grid container size={12} flexDirection={'row-reverse'} justifyContent={'space-between'} alignItems={'center'} borderBottom={1} paddingY={1}>
-                <Grid size={4} component={Typography} sx={{ textAlign: 'right', fontSize: 22, fontWeight: 800 }}>
-                    الأسعار
-                </Grid>
-                <Grid size={8} container alignItems={'end'} justifyContent={'space-around'} flexDirection={'row-reverse'}>
-                    <Grid container flexDirection={'column'} borderRadius={1000}>
-                        <LuCupSoda fontSize={30} />
-                        <Typography sx={{ textAlign: 'center', fontSize: 18, fontWeight: 800 }}>
-                            2.5
-                        </Typography>
-
-                    </Grid>
-                    <Grid container flexDirection={'column'} borderRadius={1000}>
-                        <LuCupSoda fontSize={40} />
-                        <Typography sx={{ textAlign: 'center', fontSize: 18, fontWeight: 800 }}>
-                            4
-                        </Typography>
-
-                    </Grid>
-                    <Grid container flexDirection={'column'} borderRadius={1000}>
-                        <LuCupSoda fontSize={50} />
-                        <Typography sx={{ textAlign: 'center', fontSize: 18, fontWeight: 800 }}>
-                            6
-                        </Typography>
-                    </Grid>
-                </Grid>
-            </Grid>
-            <Grid container size={12} flexDirection={'row-reverse'} paddingBottom={3}>
-                <Grid size={12} textAlign={'right'} component={Typography} fontSize={14} fontWeight={700} paddingY={1} bgcolor={'secondary.main'}>
-                    .الأصناف المتوفرة لليوم ({arabicDate})
-                </Grid>
-                <Grid container flexDirection={'column'} alignItems={'center'} size={6} padding={2} onClick={() => openPicture(purple)} >
-                    <img width={120} height={180} src={purple} />
-                    <Typography variant="h5" fontWeight={900} >
-                        علكة + بلوبيري
-                    </Typography>
-                </Grid>
-
-                <Grid container flexDirection={'column'} alignItems={'center'} size={6} padding={2} onClick={() => openPicture(berry)}>
-                    <img width={120} height={180} src={berry} />
-                    <Typography variant="h5" fontWeight={900}>
-                        توت مشكل + بطيخ
-                    </Typography>
-                </Grid>
-
-                <Grid container flexDirection={'column'} alignItems={'center'} size={6} padding={2} onClick={() => openPicture(mango)}>
-                    <img width={120} height={180} src={mango} />
-                    <Typography variant="h5" fontWeight={900}>
-                        مانجو + خوخ
-                    </Typography>
-                </Grid>
-                {/* <Grid container flexDirection={'column'} alignItems={'center'} size={6} padding={2} onClick={() => openPicture(kiwi)}>
-                    <img width={120} height={180} src={kiwi} />
-                    <Typography variant="h5" fontWeight={900}>
-                        كيوي
-                    </Typography>
-                </Grid> */}
-
-                {/* <Grid container flexDirection={'column'} alignItems={'center'} size={6} padding={2} onClick={() => openPicture(watermelon)}>
-                    <img width={110} height={180} src={watermelon} />
-                    <Typography variant="h5" fontWeight={900}>
-                        بطيخ
-                    </Typography>
-                </Grid> */}
-            </Grid>
-
-            <Typography variant="h3" paddingBottom={2} paddingTop={4} textAlign={'center'} fontWeight={900} borderTop={6}>
-                آيس كوفي
-            </Typography>
-            <Grid container size={12} flexDirection={'row-reverse'} justifyContent={'space-between'} alignItems={'center'} borderBottom={1} paddingY={1}>
-                <Grid size={4} component={Typography} sx={{ textAlign: 'right', fontSize: 22, fontWeight: 800 }}>
-                    الأسعار
-                </Grid>
-                <Grid size={8} container alignItems={'end'} justifyContent={'space-around'} flexDirection={'row-reverse'}>
-                    <Grid container flexDirection={'column'} borderRadius={1000}>
-                        <LuCupSoda fontSize={30} />
-                        <Typography sx={{ textAlign: 'center', fontSize: 18, fontWeight: 800 }}>
-                            5
-                        </Typography>
-
-                    </Grid>
-                    <Grid container flexDirection={'column'} borderRadius={1000}>
-                        <LuCupSoda fontSize={40} />
-                        <Typography sx={{ textAlign: 'center', fontSize: 18, fontWeight: 800 }}>
-                            7
-                        </Typography>
-
-                    </Grid>
-                    <Grid container flexDirection={'column'} borderRadius={1000}>
-                        <LuCupSoda fontSize={50} />
-                        <Typography sx={{ textAlign: 'center', fontSize: 18, fontWeight: 800 }}>
-                            9
-                        </Typography>
-                    </Grid>
-                </Grid>
-            </Grid>
-
-            <Grid container size={12} justifyContent={'center'} paddingBottom={3}>
-
-                <Grid container flexDirection={'column'} alignItems={'center'} padding={2} onClick={() => openPicture(icedcoffee)}>
-                    <img width={120} height={180} src={icedcoffee} />
-                    <Typography variant="h5" fontWeight={900}>
-                        آيس كوفي
-                    </Typography>
-                </Grid>
-            </Grid>
-
-            <Typography variant="h3" paddingBottom={2} paddingTop={4} textAlign={'center'} fontWeight={900} borderTop={6}>
-                بسفلورا
-            </Typography>
-            <Grid container size={12} flexDirection={'row-reverse'} justifyContent={'space-between'} alignItems={'center'} borderBottom={1} paddingY={1}>
-                <Grid size={4} component={Typography} sx={{ textAlign: 'right', fontSize: 22, fontWeight: 800 }}>
-                    الأسعار
-                </Grid>
-                <Grid size={8} container alignItems={'end'} justifyContent={'space-around'} flexDirection={'row-reverse'}>
-                    <Grid container flexDirection={'column'} borderRadius={1000}>
-                        <LuCupSoda fontSize={30} />
-                        <Typography sx={{ textAlign: 'center', fontSize: 18, fontWeight: 800 }}>
-                            5
-                        </Typography>
-
-                    </Grid>
-                    <Grid container flexDirection={'column'} borderRadius={1000}>
-                        <LuCupSoda fontSize={40} />
-                        <Typography sx={{ textAlign: 'center', fontSize: 18, fontWeight: 800 }}>
-                            7
-                        </Typography>
-
-                    </Grid>
-                    <Grid container flexDirection={'column'} borderRadius={1000}>
-                        <LuCupSoda fontSize={50} />
-                        <Typography sx={{ textAlign: 'center', fontSize: 18, fontWeight: 800 }}>
-                            9
-                        </Typography>
-                    </Grid>
-                </Grid>
-            </Grid>
-
-            <Grid container size={12} justifyContent={'center'} paddingBottom={3}>
-                <Grid container flexDirection={'column'} alignItems={'center'} padding={2} onClick={() => openPicture(passiflora)}>
-                    <img width={180} height={180} src={passiflora} />
-                    <Typography variant="h5" fontWeight={900}>
-                        بسفلورا
-                    </Typography>
-                </Grid>
-            </Grid>
-
-            <Typography variant="h3" paddingBottom={2} paddingTop={4} textAlign={'center'} fontWeight={900} borderTop={6}>
-                عصائر طبيعية
-            </Typography>
-            <Grid container size={12} flexDirection={'row-reverse'} justifyContent={'space-between'} alignItems={'center'} borderBottom={1} paddingY={1}>
-                <Grid size={4} component={Typography} sx={{ textAlign: 'right', fontSize: 22, fontWeight: 800 }}>
-                    الأسعار
-                </Grid>
-                <Grid size={8} container alignItems={'end'} justifyContent={'space-around'} flexDirection={'row-reverse'}>
-                    <Grid container flexDirection={'column'} borderRadius={1000}>
-                        <LuCupSoda fontSize={30} />
-                        <Typography sx={{ textAlign: 'center', fontSize: 18, fontWeight: 800 }}>
-                            5
-                        </Typography>
-
-                    </Grid>
-                    <Grid container flexDirection={'column'} borderRadius={1000}>
-                        <LuCupSoda fontSize={40} />
-                        <Typography sx={{ textAlign: 'center', fontSize: 18, fontWeight: 800 }}>
-                            7
-                        </Typography>
-
-                    </Grid>
-                    <Grid container flexDirection={'column'} borderRadius={1000}>
-                        <LuCupSoda fontSize={50} />
-                        <Typography sx={{ textAlign: 'center', fontSize: 18, fontWeight: 800 }}>
-                            9
-                        </Typography>
-                    </Grid>
-                </Grid>
-            </Grid>
-
-            <Grid container size={12} justifyContent={'center'} paddingBottom={3}>
-                <Grid size={12} textAlign={'right'} component={Typography} fontSize={14} fontWeight={700} paddingY={1} bgcolor={'secondary.main'}>
-                    .الأصناف المتوفرة لليوم ({arabicDate})
-                </Grid>
-
-                <Grid container flexDirection={'column'} alignItems={'center'} padding={2} onClick={() => openPicture(lemonade)}>
-                    <img width={120} height={180} src={lemonade} />
-                    <Typography variant="h5" fontWeight={900}>
-                        ليمون وجرجير
-                    </Typography>
-                </Grid>
-            </Grid>
-
+            {coldDrinks.map((category) => <ColdDrinkCategory key={category.key} category={category} openPicture={openPicture} />)}
             <Modal
                 open={openModal}
                 onClose={() => setOpenModal(false)}
