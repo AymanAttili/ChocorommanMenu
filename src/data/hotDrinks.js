@@ -6,6 +6,7 @@ import redTea from '../images/redTea.png'
 import greenTea from '../images/greenTea.png'
 import milk from '../images/milk.png'
 import herbal from '../images/herbal.png'
+import mocha from '../images/mocha.png'
 export const hotDrinks = [
     {
         id: 1,
@@ -41,8 +42,7 @@ export const hotDrinks = [
                 image: redTea,
                 isAvailable: 1,
                 prices: {
-                    m: 2,
-                    l: 3
+                    l: 2
                 }
             },
             {
@@ -51,8 +51,7 @@ export const hotDrinks = [
                 image: greenTea,
                 isAvailable: 1,
                 prices: {
-                    m: 2,
-                    l: 3
+                    l: 2
                 }
             },
             {
@@ -116,13 +115,22 @@ export const hotDrinks = [
                 }
             },
             {
+                id: 10,
+                name: 'هوت موكا',
+                image: mocha,
+                isAvailable: 1,
+                prices: {
+                    m: 2,
+                    l: 3
+                }
+            },
+            {
                 id: 11,
                 name: 'يانسون',
                 image: herbal,
                 isAvailable: 1,
                 prices: {
-                    m: 2,
-                    l: 3
+                    l: 2
                 }
             },
             {
@@ -131,8 +139,7 @@ export const hotDrinks = [
                 image: herbal,
                 isAvailable: 1,
                 prices: {
-                    m: 2,
-                    l: 3
+                    l: 2
                 }
             },
             {
@@ -141,8 +148,7 @@ export const hotDrinks = [
                 image: herbal,
                 isAvailable: 1,
                 prices: {
-                    m: 2,
-                    l: 3
+                    l: 2
                 }
             },
             {
@@ -151,8 +157,7 @@ export const hotDrinks = [
                 image: herbal,
                 isAvailable: 1,
                 prices: {
-                    m: 2,
-                    l: 3
+                    l: 2
                 }
             }
         ]

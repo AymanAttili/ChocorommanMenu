@@ -21,7 +21,7 @@ function HotDrinkCategory({ category, openPicture }) {
             <Typography variant="h3" paddingBottom={2} paddingTop={4} textAlign={'center'} fontWeight={900} borderTop={6}>
                 {name}
             </Typography>
-            <Grid container size={12} flexDirection={'row-reverse'} justifyContent={'space-between'} alignItems={'center'} borderBottom={1} paddingY={1}>
+            {/* <Grid container size={12} flexDirection={'row-reverse'} justifyContent={'space-between'} alignItems={'center'} borderBottom={1} paddingY={1}>
                 <Grid size={4} component={Typography} sx={{ textAlign: 'right', fontSize: 22, fontWeight: 800 }}>
                     الأسعار
                 </Grid>
@@ -57,7 +57,7 @@ function HotDrinkCategory({ category, openPicture }) {
                     }
 
                 </Grid>
-            </Grid>
+            </Grid> */}
             <Grid container size={12} flexDirection={'row-reverse'} justifyContent={'center'} paddingBottom={3}>
                 {
                     flavours.length > 1 &&
