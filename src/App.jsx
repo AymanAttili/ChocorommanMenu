@@ -7,23 +7,26 @@ import ColdPage from "./pages/ColdPage"
 import MojitoPage from "./pages/MojitoPage"
 import RamadanPage from "./pages/RamadanPage"
 import DessertPage from "./pages/DessertPage"
+import { Container } from "@mui/material"
 
 function App() {
 
   return (
-    <ThemeProvider theme={theme}>
-      <BrowserRouter>
-        <Routes>
-          <Route path="" element={<MainMenu />} />
-          <Route path="cold" element={<ColdPage />} />
-          <Route path="hot" element={<HotPage />} />
-          <Route path="mojito" element={<MojitoPage />} />
-          <Route path="ramadan" element={<RamadanPage />} />
-          <Route path="dessert" element={<DessertPage />} />
-          {/* <Route path="/*" element={<Error404 />}  */}
-        </Routes>
-      </BrowserRouter>
-    </ThemeProvider>
+    <Container maxWidth={'sm'}>
+      <ThemeProvider theme={theme}>
+        <BrowserRouter>
+          <Routes>
+            <Route path="" element={<MainMenu />} />
+            <Route path="cold" element={<ColdPage />} />
+            <Route path="hot" element={<HotPage />} />
+            <Route path="mojito" element={<MojitoPage />} />
+            <Route path="ramadan" element={<RamadanPage />} />
+            <Route path="dessert" element={<DessertPage />} />
+            {/* <Route path="/*" element={<Error404 />}  */}
+          </Routes>
+        </BrowserRouter>
+      </ThemeProvider>
+    </Container>
   )
 }
 
