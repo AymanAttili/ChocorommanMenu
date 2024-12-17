@@ -10,10 +10,10 @@ function DrinkCard({ drink, openPicture }) {
                     {drink.name}
                 </Typography>
             </Grid>
-            <Grid container size={12} flexDirection={'row-reverse'} justifyContent={'space-around'}>
+            <Grid container size={12} flexDirection={'row-reverse'} justifyContent={'center'} spacing={2}>
                 {
                     drink?.prices?.s &&
-                    <Grid container alignItems={'end'} justifyContent={'center'}>
+                    <Grid container alignItems={'end'} justifyContent={'center'} spacing={0}>
                         <CiCoffeeCup fontSize={25} />
                         <Typography fontWeight={900} textAlign={'center'}>
                             {drink.prices.s}
@@ -22,7 +22,7 @@ function DrinkCard({ drink, openPicture }) {
                 }
                 {
                     drink.prices &&
-                    <Grid container alignItems={'end'} justifyContent={'center'}>
+                    <Grid container alignItems={'end'} justifyContent={'center'} spacing={0}>
                         <CiCoffeeCup fontSize={30} />
                         <Typography fontWeight={900} textAlign={'center'}>
                             {drink.prices.m ? drink.prices.m : 'X'}
@@ -31,7 +31,7 @@ function DrinkCard({ drink, openPicture }) {
                 }
                 {
                     drink?.prices?.l &&
-                    <Grid container alignItems={'end'} justifyContent={'center'}>
+                    <Grid container alignItems={'end'} justifyContent={'center'} spacing={0}>
                         <CiCoffeeCup fontSize={40} />
                         <Typography fontWeight={900} textAlign={'center'}>
                             {drink.prices.l}
