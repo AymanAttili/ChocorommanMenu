@@ -3,11 +3,13 @@ import { CiCoffeeCup } from "react-icons/ci"
 
 function DrinkCard({ drink, openPicture }) {
     return (
-        <Grid container flexDirection={'column'} alignItems={'center'} justifyContent={'space-between'} gap={1} size={6} padding={2} onClick={() => openPicture(drink.image)}>
-            <Typography variant="h5" fontWeight={900} textAlign={'center'}>
+        <Grid container flexDirection={'column'} alignItems={'center'} justifyContent={'space-between'} gap={2} size={6} padding={2} onClick={() => openPicture(drink.image)}>
+            <Grid container flexDirection={'column'}>
                 <img width={110} height={180} src={drink.image} />
-                {drink.name}
-            </Typography>
+                <Typography variant="h5" fontWeight={900} textAlign={'center'}>
+                    {drink.name}
+                </Typography>
+            </Grid>
             <Grid container size={12} flexDirection={'row-reverse'} justifyContent={'space-around'}>
                 {
                     drink?.prices?.s &&
