@@ -1,4 +1,4 @@
-import { Box, Grid2 as Grid, IconButton, Modal, Typography } from "@mui/material"
+import { Box, Grid2 as Grid, IconButton, Modal } from "@mui/material"
 
 import { useCallback, useState } from "react"
 import { ExitToApp } from "@mui/icons-material"

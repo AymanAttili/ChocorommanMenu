@@ -12,7 +12,7 @@ import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { QueryClientProvider } from "@tanstack/react-query"
 
 import queryClient from './cache/queryClient'
-import ItemsEdit from "./pages/Admin/itemsEdit"
+import ItemsEdit from "./pages/Admin/ItemsEdit"
 import Login from "./pages/Admin/Login"
 
 function App() {
