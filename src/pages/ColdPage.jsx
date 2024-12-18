@@ -5,11 +5,13 @@ import { ExitToApp } from "@mui/icons-material"
 
 
 import { useNavigate } from "react-router-dom"
-import { coldDrinks } from "../data/coldDrinks";
 import ColdDrinkCategory from "../ui/ColdDrinkCategory";
+import { useItems } from "../features/categories/useItems";
+import SpinnerLoader from "../ui/SpinnerLoader";
 
 function ColdPage() {
     const navigate = useNavigate();
+    const { items, isLoading } = useItems(1);
 
     const [currentPic, setCurrentPic] = useState('')
     const [openModal, setOpenModal] = useState(false);
@@ -29,6 +31,11 @@ function ColdPage() {
         setCurrentPic(pic)
         setOpenModal(true)
     }, [setCurrentPic, setOpenModal])
+
+
+
+    if (isLoading)
+        return <SpinnerLoader />
     return (
         <Grid container flexDirection={'column'} padding={2} color="primary.main">
             <Grid container justifyContent={'end'}>
@@ -36,7 +43,7 @@ function ColdPage() {
                     <ExitToApp />
                 </IconButton>
             </Grid>
-            {coldDrinks.map((category) => <ColdDrinkCategory key={category.key} category={category} openPicture={openPicture} />)}
+            {items.map((item) => <ColdDrinkCategory key={item.id} item={item} openPicture={openPicture} />)}
             <Modal
                 open={openModal}
                 onClose={() => setOpenModal(false)}

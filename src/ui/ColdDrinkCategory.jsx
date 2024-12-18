@@ -2,11 +2,8 @@ import { Grid2 as Grid, Typography } from "@mui/material"
 import { LuCupSoda } from "react-icons/lu";
 import DrinkCard from "./DrinkCard";
 
-function ColdDrinkCategory({ category, openPicture }) {
-
-    const { flavours, prices, name } = category;
-    console.log(category, flavours, prices, name);
-
+function ColdDrinkCategory({ item, openPicture }) {
+    const { flavours, prices, name } = item;
 
     const currentDate = new Date();
     // Format the date in Arabic
@@ -66,9 +63,9 @@ function ColdDrinkCategory({ category, openPicture }) {
                     </Grid>
                 }
                 {
-                    flavours?.map((drink) =>
-                        drink.isAvailable === 1 &&
-                        <DrinkCard drink={drink} openPicture={openPicture} key={drink.id} />
+                    flavours?.map((flavour) =>
+                        flavour.isAvailable === true &&
+                        <DrinkCard flavour={flavour} openPicture={openPicture} key={flavour.id} />
                     )
                 }
             </Grid>

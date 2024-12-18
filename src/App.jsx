@@ -8,24 +8,33 @@ import MojitoPage from "./pages/MojitoPage"
 import RamadanPage from "./pages/RamadanPage"
 import DessertPage from "./pages/DessertPage"
 import { Container } from "@mui/material"
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+import { QueryClientProvider } from "@tanstack/react-query"
+
+import queryClient from './cache/queryClient'
 
 function App() {
-
   return (
     <Container maxWidth={'sm'}>
-      <ThemeProvider theme={theme}>
-        <BrowserRouter>
-          <Routes>
-            <Route path="" element={<MainMenu />} />
-            <Route path="cold" element={<ColdPage />} />
-            <Route path="hot" element={<HotPage />} />
-            <Route path="mojito" element={<MojitoPage />} />
-            <Route path="ramadan" element={<RamadanPage />} />
-            <Route path="dessert" element={<DessertPage />} />
-            {/* <Route path="/*" element={<Error404 />}  */}
-          </Routes>
-        </BrowserRouter>
-      </ThemeProvider>
+      <QueryClientProvider client={queryClient}>
+        <ThemeProvider theme={theme}>
+          <BrowserRouter>
+            <Routes>
+              <Route path="" element={<MainMenu />} />
+              <Route path="cold" element={<ColdPage />} />
+              <Route path="hot" element={<HotPage />} />
+              <Route path="mojito" element={<MojitoPage />} />
+              <Route path="ramadan" element={<RamadanPage />} />
+              <Route path="dessert" element={<DessertPage />} />
+              {/* <Route path="/*" element={<Error404 />}  */}
+            </Routes>
+          </BrowserRouter>
+        </ThemeProvider>
+        <ReactQueryDevtools
+          initialIsOpen={false}
+          buttonPosition="bottom-left"
+        />
+      </QueryClientProvider>
     </Container>
   )
 }

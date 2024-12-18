@@ -2,11 +2,13 @@ import { ExitToApp } from "@mui/icons-material";
 import { Box, Grid2 as Grid, IconButton, Modal } from "@mui/material";
 import { useCallback, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { hotDrinks } from "../data/hotDrinks";
 import HotDrinkCategory from "../ui/HotDrinkCategory";
+import SpinnerLoader from "../ui/SpinnerLoader";
+import { useItems } from "../features/categories/useItems";
 
 function HotPage() {
     const navigate = useNavigate();
+    const { items, isLoading } = useItems(2);
 
     const [currentPic, setCurrentPic] = useState('')
     const [openModal, setOpenModal] = useState(false);
@@ -26,6 +28,11 @@ function HotPage() {
         setCurrentPic(pic)
         setOpenModal(true)
     }, [setCurrentPic, setOpenModal])
+
+
+    if (isLoading)
+        return <SpinnerLoader />
+
     return (
         <Grid container flexDirection={'column'} padding={2} color="primary.main">
             <Grid container justifyContent={'end'}>
@@ -33,7 +40,7 @@ function HotPage() {
                     <ExitToApp />
                 </IconButton>
             </Grid>
-            {hotDrinks.map((category) => <HotDrinkCategory key={category.key} category={category} openPicture={openPicture} />)}
+            {items.map((item) => <HotDrinkCategory key={item.id} item={item} openPicture={openPicture} />)}
             <Modal
                 open={openModal}
                 onClose={() => setOpenModal(false)}
