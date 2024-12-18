@@ -6,8 +6,8 @@ import { ExitToApp } from "@mui/icons-material"
 
 import { useNavigate } from "react-router-dom"
 import ColdDrinkCategory from "../ui/ColdDrinkCategory";
-import { useItems } from "../features/categories/useItems";
 import SpinnerLoader from "../ui/SpinnerLoader";
+import { useItems } from "../features/items/useItems";
 
 function ColdPage() {
     const navigate = useNavigate();

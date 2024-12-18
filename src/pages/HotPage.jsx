@@ -4,7 +4,7 @@ import { useCallback, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import HotDrinkCategory from "../ui/HotDrinkCategory";
 import SpinnerLoader from "../ui/SpinnerLoader";
-import { useItems } from "../features/categories/useItems";
+import { useItems } from "../features/items/useItems";
 
 function HotPage() {
     const navigate = useNavigate();

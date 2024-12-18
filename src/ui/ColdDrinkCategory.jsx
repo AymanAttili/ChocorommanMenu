@@ -13,6 +13,12 @@ function ColdDrinkCategory({ item, openPicture }) {
         month: 'long',
         day: 'numeric'
     }).format(currentDate);
+
+    const hasAvailable = flavours?.filter((flavour) => flavour.isAvailable).length > 0
+
+    if (!hasAvailable)
+        return;
+
     return (
         <Grid>
             <Typography variant="h3" paddingBottom={2} paddingTop={4} textAlign={'center'} fontWeight={900} borderTop={6}>

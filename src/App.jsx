@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom"
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom"
 import MainMenu from "./pages/MainMenu"
 import { ThemeProvider } from "@emotion/react"
 import theme from "./theme"
@@ -12,6 +12,8 @@ import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { QueryClientProvider } from "@tanstack/react-query"
 
 import queryClient from './cache/queryClient'
+import ItemsEdit from "./pages/Admin/itemsEdit"
+import Login from "./pages/Admin/Login"
 
 function App() {
   return (
@@ -26,7 +28,9 @@ function App() {
               <Route path="mojito" element={<MojitoPage />} />
               <Route path="ramadan" element={<RamadanPage />} />
               <Route path="dessert" element={<DessertPage />} />
-              {/* <Route path="/*" element={<Error404 />}  */}
+              <Route path="editMenu" element={<ItemsEdit />} />
+              <Route path="login" element={<Login />} />
+              <Route path="/*" element={<Navigate replace to='/' />} />
             </Routes>
           </BrowserRouter>
         </ThemeProvider>
