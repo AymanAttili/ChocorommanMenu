@@ -57,10 +57,10 @@ export async function addItem(payload) {
     categoryId: payload.parentId,
     name: payload.name,
     prices: {
-      s: payload.s,
-      m: payload.m,
-      l: payload.l
-    }
+      s: payload.small,
+      m: payload.medium,
+      l: payload.large
+    },
   }
 
   const { data, error } = await supabase

@@ -20,9 +20,9 @@ export async function addFlavour(payload) {
         itemId: payload.parentId,
         name: payload.name,
         prices: {
-            s: payload.s,
-            m: payload.m,
-            l: payload.l
+            s: payload.small,
+            m: payload.medium,
+            l: payload.large
         },
         image
     }
