@@ -191,9 +191,9 @@ function ItemsEdit() {
                             الأسعار
                         </FormLabel>
                         <Grid container spacing={3}>
-                            <TextField margin='dense' type={'number'} label="صغير" disabled={isLoading} {...register('small')} />
-                            <TextField margin='dense' type={'number'} label="وسط" disabled={isLoading} {...register('medium')} />
-                            <TextField margin='dense' type={'number'} label="كبير" disabled={isLoading} {...register('large')} />
+                            <TextField margin='dense' label="صغير" disabled={isLoading} {...register('small')} />
+                            <TextField margin='dense' label="وسط" disabled={isLoading} {...register('medium')} />
+                            <TextField margin='dense' label="كبير" disabled={isLoading} {...register('large')} />
                         </Grid>
 
                         {

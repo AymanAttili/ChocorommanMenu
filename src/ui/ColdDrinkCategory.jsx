@@ -24,43 +24,48 @@ function ColdDrinkCategory({ item, openPicture }) {
             <Typography variant="h3" paddingBottom={2} paddingTop={4} textAlign={'center'} fontWeight={900} borderTop={6}>
                 {name}
             </Typography>
-            <Grid container size={12} flexDirection={'row'} justifyContent={'space-between'} alignItems={'center'} borderBottom={1} paddingY={1}>
-                <Grid size={4} component={Typography} sx={{ textAlign: 'right', fontSize: 22, fontWeight: 800 }}>
-                    الأسعار
+            {
+                (prices?.m || prices?.l) &&
+                <Grid container size={12} flexDirection={'row'} justifyContent={'space-between'} alignItems={'center'} borderBottom={1} paddingY={1}>
+
+                    <Grid size={4} component={Typography} sx={{ textAlign: 'right', fontSize: 22, fontWeight: 800 }}>
+                        الأسعار
+                    </Grid>
+                    <Grid size={8} container alignItems={'end'} justifyContent={'space-around'} flexDirection={'row'}>
+                        {
+                            prices?.s &&
+                            <Grid container flexDirection={'column'} borderRadius={1000}>
+                                <LuCupSoda fontSize={30} />
+                                <Typography sx={{ textAlign: 'center', fontSize: 18, fontWeight: 800 }}>
+                                    {prices.s}
+                                </Typography>
+
+                            </Grid>
+                        }
+                        {
+                            prices?.m &&
+                            <Grid container flexDirection={'column'} borderRadius={1000}>
+                                <LuCupSoda fontSize={40} />
+                                <Typography sx={{ textAlign: 'center', fontSize: 18, fontWeight: 800 }}>
+                                    {prices.m}
+                                </Typography>
+
+                            </Grid>
+                        }
+                        {
+                            prices?.l &&
+                            <Grid container flexDirection={'column'} borderRadius={1000}>
+                                <LuCupSoda fontSize={50} />
+                                <Typography sx={{ textAlign: 'center', fontSize: 18, fontWeight: 800 }}>
+                                    {prices.l}
+                                </Typography>
+                            </Grid>
+                        }
+
+                    </Grid>
                 </Grid>
-                <Grid size={8} container alignItems={'end'} justifyContent={'space-around'} flexDirection={'row'}>
-                    {
-                        prices?.s &&
-                        <Grid container flexDirection={'column'} borderRadius={1000}>
-                            <LuCupSoda fontSize={30} />
-                            <Typography sx={{ textAlign: 'center', fontSize: 18, fontWeight: 800 }}>
-                                {prices.s}
-                            </Typography>
+            }
 
-                        </Grid>
-                    }
-                    {
-                        prices?.m &&
-                        <Grid container flexDirection={'column'} borderRadius={1000}>
-                            <LuCupSoda fontSize={40} />
-                            <Typography sx={{ textAlign: 'center', fontSize: 18, fontWeight: 800 }}>
-                                {prices.m}
-                            </Typography>
-
-                        </Grid>
-                    }
-                    {
-                        prices?.l &&
-                        <Grid container flexDirection={'column'} borderRadius={1000}>
-                            <LuCupSoda fontSize={50} />
-                            <Typography sx={{ textAlign: 'center', fontSize: 18, fontWeight: 800 }}>
-                                {prices.l}
-                            </Typography>
-                        </Grid>
-                    }
-
-                </Grid>
-            </Grid>
             <Grid container size={12} flexDirection={'row'} justifyContent={'center'} paddingBottom={3}>
                 {
                     flavours.length > 1 &&
