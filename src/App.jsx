@@ -14,8 +14,12 @@ import { QueryClientProvider } from "@tanstack/react-query"
 import queryClient from './cache/queryClient'
 import ItemsEdit from "./pages/Admin/ItemsEdit"
 import Login from "./pages/Admin/Login"
+import { useEffect } from "react"
 
 function App() {
+  useEffect(() => {
+    document.body.setAttribute('dir', 'rtl');
+  }, []);
   return (
     <Container maxWidth={'sm'}>
       <QueryClientProvider client={queryClient}>

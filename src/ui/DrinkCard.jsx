@@ -10,32 +10,32 @@ function DrinkCard({ flavour, openPicture }) {
                     {flavour.name}
                 </Typography>
             </Grid>
-            <Grid container size={12} flexDirection={'row-reverse'} justifyContent={'center'} spacing={2}>
+            <Grid container size={12} flexDirection={'row'} justifyContent={'center'} spacing={2}>
                 {
                     flavour?.prices?.s &&
                     <Grid container alignItems={'end'} justifyContent={'center'} spacing={0}>
-                        <CiCoffeeCup fontSize={25} />
                         <Typography fontWeight={900} textAlign={'center'}>
                             {flavour.prices.s}
                         </Typography>
-                    </Grid>
-                }
-                {
-                    flavour.prices &&
-                    <Grid container alignItems={'end'} justifyContent={'center'} spacing={0}>
-                        <CiCoffeeCup fontSize={30} color={flavour.prices.m ? '' : "grey"} />
-                        <Typography fontWeight={900} textAlign={'center'}>
-                            {flavour.prices.m && flavour.prices.m}
-                        </Typography>
+                        <CiCoffeeCup fontSize={25} />
                     </Grid>
                 }
                 {
                     flavour?.prices?.l &&
                     <Grid container alignItems={'end'} justifyContent={'center'} spacing={0}>
-                        <CiCoffeeCup fontSize={40} />
+                        <Typography fontWeight={900} textAlign={'center'}>
+                            {flavour.prices.m}
+                        </Typography>
+                        <CiCoffeeCup fontSize={30} color={flavour.prices.m ? '' : "grey"} />
+                    </Grid>
+                }
+                {
+                    flavour?.prices?.l &&
+                    <Grid container alignItems={'end'} justifyContent={'center'} spacing={0}>
                         <Typography fontWeight={900} textAlign={'center'}>
                             {flavour.prices.l}
                         </Typography>
+                        <CiCoffeeCup fontSize={40} />
                     </Grid>
                 }
             </Grid>

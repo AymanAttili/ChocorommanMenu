@@ -18,11 +18,11 @@ function HotDrinkCategory({ item, openPicture }) {
             <Typography variant="h3" paddingBottom={2} paddingTop={4} textAlign={'center'} fontWeight={900} borderTop={6}>
                 {name}
             </Typography>
-            {/* <Grid container size={12} flexDirection={'row-reverse'} justifyContent={'space-between'} alignItems={'center'} borderBottom={1} paddingY={1}>
+            {/* <Grid container size={12} flexDirection={'row'} justifyContent={'space-between'} alignItems={'center'} borderBottom={1} paddingY={1}>
                 <Grid size={4} component={Typography} sx={{ textAlign: 'right', fontSize: 22, fontWeight: 800 }}>
                     الأسعار
                 </Grid>
-                <Grid size={8} container alignItems={'end'} justifyContent={'space-around'} flexDirection={'row-reverse'}>
+                <Grid size={8} container justifyContent={'space-around'} flexDirection={'row'}>
                     {
                         prices?.s &&
                         <Grid container flexDirection={'column'} borderRadius={1000}>
@@ -55,11 +55,11 @@ function HotDrinkCategory({ item, openPicture }) {
 
                 </Grid>
             </Grid> */}
-            <Grid container size={12} flexDirection={'row-reverse'} justifyContent={'center'} paddingBottom={3}>
+            <Grid container size={12} flexDirection={'row'} justifyContent={'center'} paddingBottom={3}>
                 {
                     flavours.length > 1 &&
-                    <Grid size={12} textAlign={'right'} component={Typography} fontSize={14} fontWeight={700} paddingY={1} bgcolor={'secondary.main'}>
-                        .الأصناف المتوفرة لليوم ({arabicDate})
+                    <Grid size={12} textAlign={'right'} component={Typography} fontSize={14} fontWeight={700} padding={1} bgcolor={'secondary.main'}>
+                        الأصناف المتوفرة لليوم. ({arabicDate})
                     </Grid>
                 }
                 {

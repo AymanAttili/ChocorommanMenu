@@ -29,7 +29,7 @@ function Login() {
 
     return (
         <Grid container flexDirection={'column'} padding={2} color="primary.main">
-            <Grid container justifyContent={'end'}>
+            <Grid container>
                 <IconButton color="primary" size={'large'} onClick={() => navigate('/')}>
                     <ExitToApp />
                 </IconButton>
@@ -41,13 +41,14 @@ function Login() {
                     marginY: 4,
                     boxShadow: 8
                 }} />
-                <TextField label="User name" margin='dense' disabled={isLoading} {...register('userName', { required: true })} fullWidth />
-                <TextField label="Password" margin='dense'
+                <TextField margin='dense' disabled={isLoading} placeholder='اسم المستخدم' {...register('userName', { required: true })} fullWidth />
+                <TextField margin='dense'
                     type={showPassword ? 'text' : 'password'}
                     disabled={isLoading}
                     error={!!formErrors.password}
                     helperText={formErrors.password?.message}
                     fullWidth
+                    placeholder='كلمة السر'
                     slotProps={{
                         input: {
                             endAdornment: (

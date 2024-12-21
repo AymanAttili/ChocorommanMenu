@@ -35,7 +35,7 @@ function HotPage() {
 
     return (
         <Grid container flexDirection={'column'} padding={2} color="primary.main">
-            <Grid container justifyContent={'end'}>
+            <Grid container>
                 <IconButton color="primary" size={'large'} onClick={() => navigate('/')}>
                     <ExitToApp />
                 </IconButton>
