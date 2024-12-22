@@ -2,7 +2,7 @@ import { Grid2 as Grid, Typography } from "@mui/material"
 import { LuCupSoda } from "react-icons/lu";
 import DrinkCard from "./DrinkCard";
 
-function ColdDrinkCategory({ item, openPicture }) {
+function ColdDrinkCategory({ item, openPicture, showNonAvailable }) {
     const { flavours, prices, name } = item;
 
     const currentDate = new Date();
@@ -16,7 +16,7 @@ function ColdDrinkCategory({ item, openPicture }) {
 
     const hasAvailable = flavours?.filter((flavour) => flavour.isAvailable).length > 0
 
-    if (!hasAvailable)
+    if (!hasAvailable && !showNonAvailable)
         return;
 
     return (
@@ -75,7 +75,7 @@ function ColdDrinkCategory({ item, openPicture }) {
                 }
                 {
                     flavours?.map((flavour) =>
-                        flavour.isAvailable === true &&
+                        (flavour.isAvailable === true || showNonAvailable) &&
                         <DrinkCard flavour={flavour} openPicture={openPicture} key={flavour.id} />
                     )
                 }

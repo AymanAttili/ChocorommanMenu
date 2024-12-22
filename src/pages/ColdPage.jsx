@@ -1,4 +1,4 @@
-import { Box, Grid2 as Grid, IconButton, Modal } from "@mui/material"
+import { Box, Button, Grid2 as Grid, IconButton, Modal } from "@mui/material"
 
 import { useCallback, useState } from "react"
 import { ExitToApp } from "@mui/icons-material"
@@ -14,6 +14,7 @@ function ColdPage() {
     const { items, isLoading } = useItems(1);
 
     const [currentPic, setCurrentPic] = useState('')
+    const [showNonAvailable, setShowNonAvailable] = useState(false)
     const [openModal, setOpenModal] = useState(false);
     const style = {
         position: 'absolute',
@@ -32,18 +33,23 @@ function ColdPage() {
         setOpenModal(true)
     }, [setCurrentPic, setOpenModal])
 
-
-
     if (isLoading)
         return <SpinnerLoader />
     return (
         <Grid container flexDirection={'column'} padding={2} color="primary.main">
-            <Grid container >
+            <Grid container justifyContent={'space-between'} paddingY={1}>
                 <IconButton color="primary" size={'large'} onClick={() => navigate('/')}>
                     <ExitToApp />
                 </IconButton>
+                <Button size="large" variant={showNonAvailable ? 'outlined' : 'contained'} sx={{ fontSize: 16, fontWeight: 700 }} onClick={() => setShowNonAvailable((val) => !val)}>
+                    {
+                        showNonAvailable ?
+                            'إظهار المتوفر' :
+                            'إظهار الكل'
+                    }
+                </Button>
             </Grid>
-            {items.map((item) => <ColdDrinkCategory key={item.id} item={item} openPicture={openPicture} />)}
+            {items.map((item) => <ColdDrinkCategory key={item.id} item={item} openPicture={openPicture} showNonAvailable={showNonAvailable} />)}
             <Modal
                 open={openModal}
                 onClose={() => setOpenModal(false)}

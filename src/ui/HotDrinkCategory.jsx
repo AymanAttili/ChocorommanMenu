@@ -1,7 +1,7 @@
 import { Grid2 as Grid, Typography } from "@mui/material"
 import DrinkCard from "./DrinkCard";
 
-function HotDrinkCategory({ item, openPicture }) {
+function HotDrinkCategory({ item, openPicture, showNonAvailable }) {
 
     const { flavours, prices, name } = item;
 
@@ -64,7 +64,7 @@ function HotDrinkCategory({ item, openPicture }) {
                 }
                 {
                     flavours?.map((flavour) =>
-                        flavour.isAvailable === true &&
+                        (flavour.isAvailable === true || showNonAvailable) &&
                         <DrinkCard flavour={flavour} openPicture={openPicture} key={flavour.id} />
                     )
                 }
